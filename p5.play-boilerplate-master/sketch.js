@@ -1,10 +1,12 @@
-var gamestate = "farm"
+var gamestate = "start"
 var canvas;
+var carrotsGroup;
+var carrot1,carrot2,carrot3,carrot4,carrot5,carrot6,carrot7,carrot8;
+
 
 //plant carrots button
 var plantCarrotsButton;
 
-var carrotsAr = [];
 
 
 function preload() {
@@ -107,48 +109,8 @@ function setup() {
   plantCarrotsButton.scale = 0.3;
   plantCarrotsButton.visible = false;
 
-    //carrots
-    carrot1 = createSprite(475,220);
-    carrot1.addImage(carrotImg);
-    carrot1.scale = 0.2;
-    carrot1.visible = false;
-
-    carrot2 = createSprite(475,325);
-    carrot2.addImage(carrotImg);
-    carrot2.scale = 0.2;
-    carrot2.visible = false;
-
-    carrot3 = createSprite(650,220);
-    carrot3.addImage(carrotImg);
-    carrot3.scale = 0.2;
-    carrot3.visible = false;
-
-    carrot4 = createSprite(650,325);
-    carrot4.addImage(carrotImg);
-    carrot4.scale = 0.2;
-    carrot4.visible = false;
-
-    carrot5 = createSprite(750,220);
-    carrot5.addImage(carrotImg);
-    carrot5.scale = 0.2;
-    carrot5.visible = false;
-
-    carrot6 = createSprite(750,325);
-    carrot6.addImage(carrotImg);
-    carrot6.scale = 0.2;
-    carrot6.visible = false;
-
-    carrot7 = createSprite(950,220);
-    carrot7.addImage(carrotImg);
-    carrot7.scale = 0.2;
-    carrot7.visible = false;
-
-    carrot8 = createSprite(950,325);
-    carrot8.addImage(carrotImg);
-    carrot8.scale = 0.2;
-    carrot8.visible = false;
-
-    carrotsAr = [carrot1,carrot2,carrot3,carrot4,carrot5,carrot6,carrot7,carrot8];
+  //carrots group
+    carrotsGroup = createGroup();
 }
 
 function draw() {
@@ -192,14 +154,55 @@ function draw() {
 
     if (mousePressedOver(plantCarrotsButton))
     {
-      carrot1.visible = true;
-      carrot2.visible = true;
-      carrot3.visible = true;
-      carrot4.visible = true;
-      carrot5.visible = true;
-      carrot6.visible = true;
-      carrot7.visible = true;
-      carrot8.visible = true;
+      
+      carrot1 = createSprite(475,220);
+      carrot1.addImage(carrotImg);
+      carrot1.scale = 0.2;
+      //carrot1.visible = false;
+      carrotsGroup.add(carrot1);
+  
+  
+      carrot2 = createSprite(475,325);
+      carrot2.addImage(carrotImg);
+      carrot2.scale = 0.2;
+      //carrot2.visible = false;
+      carrotsGroup.add(carrot2);
+  
+      carrot3 = createSprite(650,220);
+      carrot3.addImage(carrotImg);
+      carrot3.scale = 0.2;
+      //carrot3.visible = false;
+      carrotsGroup.add(carrot3);
+  
+      carrot4 = createSprite(650,325);
+      carrot4.addImage(carrotImg);
+      carrot4.scale = 0.2;
+      //carrot4.visible = false;
+      carrotsGroup.add(carrot4);
+  
+      carrot5 = createSprite(750,220);
+      carrot5.addImage(carrotImg);
+      carrot5.scale = 0.2;
+      //carrot5.visible = false;
+      carrotsGroup.add(carrot5);
+  
+      carrot6 = createSprite(750,325);
+      carrot6.addImage(carrotImg);
+      carrot6.scale = 0.2;
+      //carrot6.visible = false;
+      carrotsGroup.add(carrot6);
+  
+      carrot7 = createSprite(950,220);
+      carrot7.addImage(carrotImg);
+      carrot7.scale = 0.2;
+      //carrot7.visible = false;
+      carrotsGroup.add(carrot7);
+  
+      carrot8 = createSprite(950,325);
+      carrot8.addImage(carrotImg);
+      carrot8.scale = 0.2;
+      //carrot8.visible = false;
+      carrotsGroup.add(carrot8);
     }
 
   }
